@@ -18,3 +18,4 @@ Place all written answers from `recitation-05.md` here for easier grading.
 
 
 - **1c.**
+Figure for 1C is shown above in question 1B. 
