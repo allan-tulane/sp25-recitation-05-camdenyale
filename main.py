@@ -17,7 +17,7 @@ def ssort(L):
         return [L[0]] + ssort(L[1:])
 
 
-def qsort(a, pivot_fn):  # finished - Sofia
+def qsort(a, pivot_fn):
     if len(a) <= 1:
         return a
     else:
