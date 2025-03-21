@@ -7,8 +7,8 @@ sys.setrecursionlimit(10000)
 
 def ssort(L):
     ### selection sort
-    if (len(L) == 1):
-        return (L)
+    if (len(L) <= 1):
+        return L
     else:
         m = L.index(min(L))
         #print('selecting minimum %s' % L[m])
@@ -30,27 +30,26 @@ def qsort(a, pivot_fn):
 
 def time_search(sort_fn, mylist):
     """
-        Return the number of milliseconds to run this
-        sort function on this list.
+    Return the number of milliseconds to run this
+    sort function on this list.
 
-        Note 1: `sort_fn` parameter is a function.
-        Note 2: time.time() returns the current time in seconds.
-        You'll have to multiple by 1000 to get milliseconds.
+    Note 1: `sort_fn` parameter is a function.
+    Note 2: time.time() returns the current time in seconds. 
+    You'll have to multiple by 1000 to get milliseconds.
 
-        Params:
-          sort_fn.....the search function
-          mylist......the list to search
-          key.........the search key
+    Params:
+      sort_fn.....the search function
+      mylist......the list to search
+      key.........the search key 
 
-        Returns:
-          the number of milliseconds it takes to run this
-          search function on this input.
-        """
+    Returns:
+      the number of milliseconds it takes to run this
+      search function on this input.
+    """
     start = time.time()
     sort_fn(mylist)
     return (time.time() - start) * 1000
     ###
-
 
 def compare_sort(sizes=[50, 100, 200, 500, 800, 1000, 2000,3000, 5000, 8000]):
   """
@@ -65,9 +64,7 @@ def compare_sort(sizes=[50, 100, 200, 500, 800, 1000, 2000,3000, 5000, 8000]):
   ### TODO - sorting algorithms for comparison
   result = []
   for size in sizes:
-    # create list in ascending order
     mylist = list(range(size))
-    # shuffles list if needed
     random.shuffle(mylist)
     qsort_fixed_pivot_t = time_search(lambda a: qsort(a, lambda a: a[0]),
                                       mylist[:])
